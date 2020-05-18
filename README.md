@@ -82,8 +82,8 @@ howdoi [-n -v -h] -- question
 Just run the following commands
 
 ````shell script
-$ wget https://raw.githubusercontent.com/san-kumar/howdoi/master/howdoi -O /usr/local/bin/howdoi
-$ chmod +x /usr/local/bin
+$ mkdir -p ~/bin && wget https://raw.githubusercontent.com/san-kumar/howdoi/master/howdoi -O ~/bin/howdoi && chmod +x ~/bin/howdoi
+$ sudo ln -s ~/bin/howdoi /usr/local/bin/howdoi
 
 $ howdoi check my linux version
 ```` 
