@@ -1,0 +1,99 @@
+g#!/usr/bin/env php
+<?php
+
+$i = 0;
+$opt = getopt("h:n:v", [], $i);
+$question = trim(join(' ', array_slice($argv, $i)));
+$total = isset($opt['n']) && $opt['n'] > 0 ? (int) $opt['n'] : 1;
+
+if (isset($opt['h']) || empty($question)) {
+    echo "Usage: howdoi [-n -v -h] -- question\n\t   howdoi -n 2 change grep color (shows 2 results)\n\t   howdoi -v extract a tar file (shows full answer)\n\n\t-n\t\tNumber of results (default is 1)\n\t-v\t\tShow full answer (otherwise shows only code)\n\t-h\t\tShows this help\n\n";
+    exit(0);
+}
+
+$sites = ['', 'askubuntu.com', 'stackexchange.com', 'stackoverflow.com'];
+$count = 0;
+$verbose = isset($opt['v']);
+$term = ''; //can also be linux|ubuntu from /etc/lsb-release
+
+foreach ($sites as $site) {
+    $google = request("https://www.google.com/search", ['q' => sprintf('%s %s %s', $term, $question, $site ? "site:$site" : '')]);//sprintf('site:stackexchange.com %s', $question)]);
+    $links = getNode($google, '//a');
+
+    foreach ($links as $link) {
+        $href = $link->getAttribute('href');
+        $regex = sprintf("/(%s)/", join('|', array_map('preg_quote', array_filter($sites))));
+
+        if (preg_match($regex, parse_url($href, PHP_URL_HOST)) || (parse_url($href, PHP_URL_PATH) === '/url' && preg_match($regex, qs('q', $href)))) {
+            $url = preg_match('/^http/', $href) ? $href : sprintf("https://www.google.com/%s", ltrim($href, '/'));
+            $so = request($url);
+            $answers = getNode($so, '//div[contains(concat(" ", normalize-space(@class), " "), " answercell ")]');
+
+            /** @var \DOMElement $answer */
+            foreach ($answers as $answer) {
+                global $xpath;
+                $strlen = 0;
+
+                if ($verbose) {
+                    $texts = $xpath->query('.//div[contains(concat(" ", normalize-space(@class), " "), " post-text ")]', $answer);
+                    foreach ($texts as $text) {
+                        $val = trim($text->textContent);
+                        if (strlen($val) > 3) {
+                            echo $val, "\n";
+                            $strlen += strlen($val);
+                        }
+                    }
+                } else {
+                    /** @var \DOMNodeList $codes */
+                    $codes = $xpath->query('./*//pre/code', $answer);
+                    foreach ($codes as $code) {
+                        $val = trim($code->textContent);
+                        if (strlen($val) > 3) {
+                            echo $val, "\n";
+                            $strlen += strlen($val);
+                        }
+                    }
+                }
+
+                if ($strlen > 5) {
+                    echo "\nSource: $href\n\n";
+
+                    if (++$count >= $total) exit(0);
+                }
+            }
+        }
+    }
+}
+
+function request($url, $params = []) {
+    $options = [
+        'http' => [
+            'method' => "GET",
+            'header' => "Accept-language: en\r\n" .
+                "User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko\r\n" // i.e. An iPad
+        ],
+    ];
+
+    $context = stream_context_create($options);
+    $link = sprintf("%s?%s", $url, http_build_query($params));
+    //echo $link, "\n";
+    return file_get_contents($link, FALSE, $context);
+}
+
+function getNode($html, $expression) {
+    global $xpath;
+
+    libxml_use_internal_errors(TRUE);
+
+    $doc = new DOMDocument();
+    $doc->loadHTML($html);
+    $xpath = new DOMXPath($doc);
+
+    return $xpath->evaluate($expression);
+}
+
+function qs($key, $url) {
+    $qs = parse_url(filter_var($url, FILTER_VALIDATE_URL) ? $url : "https://www.example.com/$url", PHP_URL_QUERY);
+    parse_str($qs, $parts);
+    return !empty($parts[$key]) ? $parts[$key] : '';
+}
