@@ -1,6 +1,6 @@
 # howdoi
 
-Tell you how to do something in the linux terminal. 
+Tell you how to do something in the linux terminal by searching the internet for answers. 
 
 ## Examples
 
@@ -90,10 +90,11 @@ $ howdoi check my linux version
 
 ## Caveats
 
-Hopefully it will save you some time and makes your life easier, but remember:
-
 - It's just a quick hack to save you a few clicks. I wrote this in less than 2 hours so don't expect this to be perfect.
-- It prefers Ubuntu solutions over other linux distros.
+- Right now, it prefers Ubuntu solutions over other linux distros.
+
+Hopefully it will save you some time and makes your life easier. 
+If so, please share it with your friends and give me feedback.
   	   	
 ## Licence   	
 
