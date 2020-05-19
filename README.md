@@ -1,6 +1,7 @@
 # howdoi
 
-Tells you how to do something in the linux terminal by searching the internet for answers. 
+Get quick answers to common linux related questions, right inside your terminal by typing
+"howdoi [your question]".
 
 ## Screenshot
 
