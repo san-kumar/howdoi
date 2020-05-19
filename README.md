@@ -1,6 +1,6 @@
 # howdoi
 
-Tell you how to do something in the linux terminal by searching the internet for answers. 
+Tells you how to do something in the linux terminal by searching the internet for answers. 
 
 ## Screenshot
 
