@@ -2,6 +2,10 @@
 
 Tell you how to do something in the linux terminal by searching the internet for answers. 
 
+## Screenshot
+
+![screenshot](./screenshot.gif)
+
 ## Examples
 
 ### Quick answer
@@ -32,20 +36,19 @@ $ howdoi -v add a program to cron
 
 ### Multiple results
 ````shell script
-howdoi -n 2 attach to a screen
-$ screen
-$ screen -S myprogramrunningunderscreen
-$ screen -ls
+$ howdoi -n 2 attach to a screen
+
+ screen
+ screen -S myprogramrunningunderscreen
+ screen -ls
 
 There are screens on:
     4964.myprogramrunningunderscreen    (05/31/2013 09:42:29 PM)    (Detached)
     4874.pts-1.creeper  (05/31/2013 09:39:12 PM)    (Detached)
-2 Sockets in /var/run/screen/S-paul.
-screen -r myprog
 
 Source: https://askubuntu.com/questions/302662/reattaching-to-an-existing-screen-session
 
-screen -d -r
+  screen -d -r
 
 Source: https://askubuntu.com/questions/302662/reattaching-to-an-existing-screen-session
 ````
@@ -91,7 +94,8 @@ $ howdoi check my linux version
 ## Caveats
 
 Hopefully it will save you some time and makes your life easier. 
-If so, please share it with your friends and give me feedback. But remember:
+If so, please share it with your friends and give me [feedback here](https://news.ycombinator.com/item?id=23230157#23230181).
+But remember:
 
 - It's just a quick hack to save you a few clicks. I wrote this in less than 2 hours so don't expect this to be perfect.
 - Right now, it prefers Ubuntu solutions over other linux distros.
