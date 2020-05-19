@@ -83,7 +83,7 @@ howdoi [-n -v -h] -- question
 
 ## Installation
 
-Just run the following commands
+Just run the following commands (requires PHP 5+).
 
 ````shell script
 $ mkdir -p ~/bin && wget https://raw.githubusercontent.com/san-kumar/howdoi/master/howdoi -O ~/bin/howdoi && chmod +x ~/bin/howdoi
@@ -91,6 +91,7 @@ $ sudo ln -s ~/bin/howdoi /usr/local/bin/howdoi
 
 $ howdoi check my linux version
 ```` 
+
 
 ## Caveats
 
