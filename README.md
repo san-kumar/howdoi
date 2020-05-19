@@ -101,6 +101,7 @@ But remember:
 
 - It's just a quick hack to save you a few clicks. I wrote this in less than 2 hours so don't expect this to be perfect.
 - Right now, it prefers Ubuntu solutions over other linux distros.
+- Just to clarify this only prints the answer, it does not run any code on your machine (the screenshot may have given a wrong impression to some people).
 
 ## Testimonials
 
