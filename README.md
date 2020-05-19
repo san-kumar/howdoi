@@ -106,7 +106,7 @@ But remember:
 ## Testimonials
 
 Thank you everyone who encouraged me and voted for this project on Hacker news. Seeing comments like
-these really makes the work that I've put into it worth it and now I want to make more such projects for linux! :)
+these really makes the work that I've put into it worth it and now I want to make more such projects!
 
 [![testimonial](./testimonial.png)](https://news.ycombinator.com/item?id=23230157)  
  	   	
