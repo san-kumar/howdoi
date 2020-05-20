@@ -54,13 +54,13 @@ Source: https://askubuntu.com/questions/302662/reattaching-to-an-existing-screen
 Source: https://askubuntu.com/questions/302662/reattaching-to-an-existing-screen-session
 ````
 
-### Other
+### Programming questions
 ````shell script
-$ howdoi get epoch time
-
-  date +%s
-     
-Source: https://stackoverflow.com/questions/1092631/get-current-time-in-seconds-since-the-epoch-on-linux-bash
+$ howdoi js hex to int
+  hexString = yourNumber.toString(16);
+  yourNumber = parseInt(hexString, 16);
+  
+  Source: https://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hexadecimal-in-javascript
 ```` 
 
 ## Usage
