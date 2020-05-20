@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
-require_once '/home/san/work/libs/phputils/all/src/all.php';
-#error_reporting(E_PARSE);
+#require_once '/home/san/work/libs/phputils/all/src/all.php';
+error_reporting(E_PARSE);
 
 $i = 0;
 $opt = getopt("h:n:v:i", [], $i);
