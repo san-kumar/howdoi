@@ -79,7 +79,7 @@ howdoi [-n -v -h -i] -- question
 
    	-n		Number of results (default is 1)
    	-v		Show full answer (otherwise shows only code)
-   	-i      Interactive or REPL mode (takes question input - useful for hotkey binding)
+   	-i		Interactive or REPL mode (useful for hotkey binding)
    	-h		Shows this help
 
 ## Installation
