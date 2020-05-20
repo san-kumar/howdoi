@@ -99,7 +99,8 @@ It is possible to run this outside the terminal interactively via a hotkey bindi
 
 ### Setup hotkey binding
 
-- Copy [popup.sh](./popup.sh) in your `~/bin` folder (or the folder in which you've downloaded howdoi)
+- Copy [popup.sh](./popup.sh) in your `~/bin` folder (or the folder in which you've downloaded *howdoi* script)
+- Run `chmod +x ~/bin/popup.sh`
 - Go to *Settings &gt; Keyboard &gt; Shortcuts* and add a new shortcut to `~/bin/popup.sh`
 - Assign a hotkey (e.g. Ctrl+Shift+H) to your new shortcut.
 - Now press the hotkey and you should see a popup where you can type your question!"
