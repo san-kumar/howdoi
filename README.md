@@ -56,21 +56,11 @@ Source: https://askubuntu.com/questions/302662/reattaching-to-an-existing-screen
 
 ### Other
 ````shell script
-$ howdoi upgrade to latest php
+$ howdoi get epoch time
 
-  sudo apt-get upgrade
-  sudo apt-get dist-upgrade
-  sudo apt-add-repository ppa:ondrej/php
-  sudo apt-add-repository ppa:ondrej/php5-oldstable
-  sudo apt-add-repository ppa:ondrej/php5
-  sudo apt-add-repository ppa:ondrej/php5-5.6
-  sudo apt-get update
-  sudo apt-get install php5.5
-  sudo apt-get install php5.6
-  sudo apt-get install php7.0
-  do-release-upgrade
-  
-  Source: https://askubuntu.com/questions/565784/how-do-i-upgrade-php-version-to-the-latest-stable-released-version
+  date +%s
+     
+Source: https://stackoverflow.com/questions/1092631/get-current-time-in-seconds-since-the-epoch-on-linux-bash
 ```` 
 
 ## Usage
@@ -96,11 +86,11 @@ $ howdoi check my linux version
 ## Interactive or Popup mode
 
 It is possible to run this outside the terminal interactively via a hotkey binding. It
-can also handle simple programming related questions
+can also handle simple programming related questions too.
 
 ![popup](./popup.gif)
 
-(this popup shows when you press the hotkey as described below)
+(you can ask questions in a popup too by pressing a hotkey - as described below)
 
 ### Setup hotkey binding
 
