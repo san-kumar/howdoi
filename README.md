@@ -5,7 +5,7 @@ Get quick answers to common linux related questions, right inside your terminal 
 
 ## Screenshot
 
-![screenshot](./screenshot.gif)
+![screenshot](./screenrec.gif)
 
 ## Examples
 
