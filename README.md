@@ -75,11 +75,12 @@ $ howdoi upgrade to latest php
 
 ## Usage
  
-howdoi [-n -v -h] -- question
+howdoi [-n -v -h -i] -- question
 
    	-n		Number of results (default is 1)
-   	-v		show full answer (otherwise shows only code)
-   	-h		shows this help
+   	-v		Show full answer (otherwise shows only code)
+   	-i      Interactive or REPL mode (takes question input - useful for hotkey binding)
+   	-h		Shows this help
 
 ## Installation
 
@@ -92,6 +93,16 @@ $ sudo ln -s ~/bin/howdoi /usr/local/bin/howdoi
 $ howdoi check my linux version
 ```` 
 
+## Interactive or Popup mode
+
+It is possible to run this outside the terminal interactively via a hotkey binding.
+
+### Setup hotkey binding
+
+- Copy [popup.sh](./popup.sh) in your `~/bin` folder (or the folder in which you've downloaded howdoi)
+- Go to *Settings &gt; Keyboard &gt; Shortcuts* and add a new shortcut to `~/bin/popup.sh`
+- Assign a hotkey (e.g. Ctrl+Shift+H) to your new shortcut.
+- Now press the hotkey and you should see a popup where you can type your question!
 
 ## Caveats
 

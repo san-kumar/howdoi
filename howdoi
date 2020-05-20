@@ -1,14 +1,20 @@
 #!/usr/bin/env php
 <?php
-error_reporting(E_PARSE);
+require_once '/home/san/work/libs/phputils/all/src/all.php';
+#error_reporting(E_PARSE);
 
 $i = 0;
-$opt = getopt("h:n:v", [], $i);
+$opt = getopt("h:n:v:i", [], $i);
 $question = trim(join(' ', array_slice($argv, $i)));
 $total = isset($opt['n']) && $opt['n'] > 0 ? (int) $opt['n'] : 1;
 
-if (isset($opt['h']) || empty($question)) {
-    echo "Usage: howdoi [-n -v -h] -- question\n\t   howdoi -n 2 change grep color (shows 2 results)\n\t   howdoi -v extract a tar file (shows full answer)\n\n\t-n\t\tNumber of results (default is 1)\n\t-v\t\tShow full answer (otherwise shows only code)\n\t-h\t\tShows this help\n\n";
+if (isset($opt['i'])) {
+    do {
+        echo "Type your question and press Enter (Ctrl+C to cancel):\n";
+        $question = trim(fgets(STDIN));
+    } while (empty($question));
+} else if (isset($opt['h']) || empty($question)) {
+    echo "Usage: howdoi [-n -v -i -h] -- question\n\t   howdoi -n 2 change grep color (shows 2 results)\n\t   howdoi -v extract a tar file (shows full answer)\n\n\t-n\t\tNumber of results (default is 1)\n\t-v\t\tShow full answer (otherwise shows only code)\n\t-i\t\tInteractive or REPL mode (useful with hotkey binding)\n\n\t-h\t\tShows this help\n\n";
     exit(0);
 }
 
