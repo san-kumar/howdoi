@@ -95,7 +95,12 @@ $ howdoi check my linux version
 
 ## Interactive or Popup mode
 
-It is possible to run this outside the terminal interactively via a hotkey binding.
+It is possible to run this outside the terminal interactively via a hotkey binding. It
+can also handle simple programming related questions
+
+![popup](./popup.gif)
+
+(this popup shows when you press the hotkey as described below)
 
 ### Setup hotkey binding
 
