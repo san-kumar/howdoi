@@ -103,7 +103,7 @@ It is possible to run this outside the terminal interactively via a hotkey bindi
 - Run `chmod +x ~/bin/popup.sh`
 - Go to *Settings &gt; Keyboard &gt; Shortcuts* and add a new shortcut to `~/bin/popup.sh`
 - Assign a hotkey (e.g. Ctrl+Shift+H) to your new shortcut.
-- Now press the hotkey and you should see a popup where you can type your question!"
+- Now press the hotkey and you should see a popup where you can type your question!
 
 ## Caveats
 
@@ -111,9 +111,9 @@ Hopefully it will save you some time and makes your life easier.
 If so, please share it with your friends and give me [feedback here](https://news.ycombinator.com/item?id=23230157#23230181).
 But remember:
 
-- It's just a quick hack to save you a few clicks. I wrote this in less than 2 hours so don't expect this to be perfect.
+- It's just a quick hack to save you a few clicks. I wrote this in just a few hours, so it's not perfect.
 - Right now, it prefers Ubuntu solutions over other linux distros.
-- Just to clarify this only prints the answer, it does not run any code on your machine (the screenshot may have given a wrong impression to some people).
+- Just to clarify this only prints the answer, it does not run any code on your machine (in case the screenshot gives you the wrong impression).
 
 ## Testimonials
 
