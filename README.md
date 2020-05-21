@@ -100,25 +100,23 @@ can also handle simple programming related questions too.
 - Assign a hotkey (e.g. Ctrl+Shift+H) to your new shortcut.
 - Now press the hotkey and you should see a popup where you can type your question!
 
-## Caveats
+## Feedback
 
-Hopefully it will save you some time and makes your life easier. 
-If so, please share it with your friends and give me [feedback here](https://news.ycombinator.com/item?id=23230157#23230181).
-But remember:
-
-- It's just a quick hack to save you a few clicks. I wrote this in just a few hours, so it's not perfect.
-- Right now, it prefers Ubuntu solutions over other linux distros.
-- Just to clarify this only prints the answer, it does not run any code on your machine (in case the screenshot gives you the wrong impression).
-
-## Testimonials
+Hopefully it will save you some time and makes your life easier. If so, please share it with your friends and give me [feedback here](https://news.ycombinator.com/item?id=23230157#23230181).
 
 Thank you everyone who encouraged me and voted for this project on Hacker news. Seeing comments like
-these really makes the work that I've put into it worth it and now I want to make more such projects!
+these really makes the work I've put into it worth it and now I want to make more such projects!
 
 [![testimonial 1](./testimonial-1.png)](https://news.ycombinator.com/item?id=23230157)  
 
 [![testimonial 2](./testimonial-2.png)](https://www.reddit.com/r/linux/comments/gn2wfv/howdoi_get_quick_answers_to_common_linux_related/)  
  	   	
+## Caveats
+
+- It's just a quick hack to save you a few clicks. I wrote this in just a few hours, so it's not perfect.
+- Right now, it prefers Ubuntu solutions over other linux distros.
+- Just to clarify this only prints the answer, it does not run any code on your machine (in case the screenshot gives you the wrong impression).
+
 ## Licence   	
 
 Perl's Artistic Licence
