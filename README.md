@@ -115,9 +115,9 @@ But remember:
 Thank you everyone who encouraged me and voted for this project on Hacker news. Seeing comments like
 these really makes the work that I've put into it worth it and now I want to make more such projects!
 
-[![testimonials 1](./testimonials1.png)](https://news.ycombinator.com/item?id=23230157)  
+[![testimonial 1](./testimonial1.png)](https://news.ycombinator.com/item?id=23230157)  
 
-[![testimonials 2](./testimonials2.png)](https://www.reddit.com/r/linux/comments/gn2wfv/howdoi_get_quick_answers_to_common_linux_related/)  
+[![testimonial 2](./testimonial2.png)](https://www.reddit.com/r/linux/comments/gn2wfv/howdoi_get_quick_answers_to_common_linux_related/)  
  	   	
 ## Licence   	
 
