@@ -2,12 +2,12 @@
 <?php
 #require_once '/home/san/work/libs/phputils/all/src/all.php';
 global $debug;
+$i = 0;
 $opt = getopt("h:n:v:i:d", [], $i);
 $debug = isset($opt['d']);
 
 error_reporting($debug ? E_ALL : E_PARSE);
 
-$i = 0;
 $question = trim(join(' ', array_slice($argv, $i)));
 $total = isset($opt['n']) && $opt['n'] > 0 ? (int) $opt['n'] : 1;
 
@@ -16,8 +16,8 @@ if (isset($opt['i'])) {
         echo "Type your question and press Enter (Ctrl+C to cancel):\n";
         $question = trim(fgets(STDIN));
     } while (empty($question));
-} else if (isset($opt['h']) || empty($question)) {
-    echo "Usage: howdoi [-n -v -i -h] -- question\n\t   howdoi -n 2 change grep color (shows 2 results)\n\t   howdoi -v extract a tar file (shows full answer)\n\n\t-n\t\tNumber of results (default is 1)\n\t-v\t\tShow full answer (otherwise shows only code)\n\t-i\t\tInteractive or REPL mode (useful with hotkey binding)\n\n\t-h\t\tShows this help\n\n";
+} else if (isset($opt['h']) || empty(trim($question))) {
+    echo "Usage: howdoi [-n -v -i -h] -- question\n\t   howdoi -n 2 change grep color (shows 2 results)\n\t   howdoi -v extract a tar file (shows full answer)\n\n\t-n\t\tNumber of results (default is 1)\n\t-v\t\tShow full answer (otherwise shows only code)\n\t-i\t\tInteractive or REPL mode (useful with hotkey binding)\n\t-d\t\tDebug mode (please paste output from this in github issues)\n\t-h\t\tShows this help\n\n";
     exit(0);
 }
 
