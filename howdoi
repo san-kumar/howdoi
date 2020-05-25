@@ -1,10 +1,13 @@
 #!/usr/bin/env php
 <?php
 #require_once '/home/san/work/libs/phputils/all/src/all.php';
-error_reporting(E_PARSE);
+global $debug;
+$opt = getopt("h:n:v:i:d", [], $i);
+$debug = isset($opt['d']);
+
+error_reporting($debug ? E_ALL : E_PARSE);
 
 $i = 0;
-$opt = getopt("h:n:v:i", [], $i);
 $question = trim(join(' ', array_slice($argv, $i)));
 $total = isset($opt['n']) && $opt['n'] > 0 ? (int) $opt['n'] : 1;
 
@@ -73,6 +76,7 @@ foreach ($sites as $site) {
 }
 
 function request($url, $params = []) {
+    global $debug;
     $options = [
         'http' => [
             'method' => "GET",
@@ -83,8 +87,9 @@ function request($url, $params = []) {
 
     $context = stream_context_create($options);
     $link = sprintf("%s?%s", $url, http_build_query($params));
-    //echo $link, "\n";
-    return file_get_contents($link, FALSE, $context);
+    $response = file_get_contents($link, FALSE, $context);
+    if ($debug) printf("Visit: %s\nStatus: %s\nResponse: %s\n", $link, var_export($http_response_header, TRUE), $response);
+    return $response;
 }
 
 function getNode($html, $expression) {
