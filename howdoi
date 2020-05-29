@@ -11,7 +11,7 @@ error_reporting($debug ? E_ALL : E_PARSE);
 $question = trim(join(' ', array_slice($argv, $i)));
 $total = isset($opt['n']) && $opt['n'] > 0 ? (int) $opt['n'] : 1;
 
-if (isset($opt['i'])) {
+if (isset($opt['i']) || (count($argv) === 2) && ($argv[1] == '-i')) {
     do {
         echo "Type your question and press Enter (Ctrl+C to cancel):\n";
         $question = trim(fgets(STDIN));
